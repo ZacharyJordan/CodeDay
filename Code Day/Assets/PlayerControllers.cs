@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerControllers : MonoBehaviour {
 
 	public float movementSpeed;
+	public float maxSpeed;
+	public float Acceleration;
+	public float Deceleration;
 
 	public GameObject playerOne;
 	public GameObject playerTwo;
@@ -30,15 +33,31 @@ public class PlayerControllers : MonoBehaviour {
 
 	void movementControl()
 	{
-		if(Input.GetKey(KeyCode.A))
+		playerOne.GetComponent<Rigidbody2D>().velocity = playerOne.GetComponent<Rigidbody2D>().velocity + playerOne.GetComponent<Rigidbody2D>().velocity.normalized * 10 * Time.deltaTime;
+	}
+
+	/*void movementControl()
+	{
+		Debug.Log (movementSpeed);
+		if((Input.GetKey(KeyCode.D))&&(movementSpeed < maxSpeed))
 		{
-			playerOnePos.x -= movementSpeed;
-		}
-		else if(Input.GetKey(KeyCode.D))
-		{
+			movementSpeed = movementSpeed + Acceleration * Time.deltaTime;
 			playerOnePos.x += movementSpeed;
 		}
-
+		else if((Input.GetKey(KeyCode.A))&&(movementSpeed > -maxSpeed))
+		{
+			movementSpeed = movementSpeed + Acceleration * Time.deltaTime;
+			playerOnePos.x -= movementSpeed;
+		}
+		else
+		{
+			if(movementSpeed > Deceleration * Time.deltaTime)
+				movementSpeed = movementSpeed - Deceleration * Time.deltaTime;
+			else if(movementSpeed < -Deceleration * Time.deltaTime)
+				movementSpeed = movementSpeed + Deceleration * Time.deltaTime;
+			else
+				movementSpeed = 0;
+		}
 		if(Input.GetKey(KeyCode.W))
 		{
 			playerOnePos.y += movementSpeed;
@@ -69,5 +88,5 @@ public class PlayerControllers : MonoBehaviour {
 		playerOne.GetComponent<Transform>().position = playerOnePos;
 		playerTwo.GetComponent<Transform>().position = playerTwoPos;
 
-	}
+	}*/
 }
