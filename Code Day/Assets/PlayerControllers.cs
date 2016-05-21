@@ -21,8 +21,8 @@ public class PlayerControllers : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		playerOnePos = playerOne.GetComponent<Transform>().position;
-		playerTwoPos = playerTwo.GetComponent<Transform>().position;
+		playerOnePos = playerOne.GetComponent<Rigidbody2D>().position;
+		playerTwoPos = playerTwo.GetComponent<Rigidbody2D>().position;
 
 		playerOneXSpeed = 0;
 		playerOneYSpeed = 0;
@@ -81,8 +81,8 @@ public class PlayerControllers : MonoBehaviour {
 			playerTwoPos.y -= movementSpeed;
 		}
 			
-		playerOne.GetComponent<Transform>().position = playerOnePos;
-		playerTwo.GetComponent<Transform>().position = playerTwoPos;
+		playerOne.GetComponent<Rigidbody2D>().position = playerOnePos;
+		playerTwo.GetComponent<Rigidbody2D>().position = playerTwoPos;
 
 	}
 }
