@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerControllers.cs">
     <Files>
-      <File FileName="Assets/PlayerControllers.cs" Line="22" Column="63" />
-      <File FileName="Assets/ModifyColor.cs" Line="39" Column="56" />
+      <File FileName="Assets/PlayerControllers.cs" Line="21" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
