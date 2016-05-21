@@ -87,12 +87,6 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
-<<<<<<< HEAD
-=======
- <Reference Include="pseudoSinCos">
- <HintPath>/Users/ZacharyJordan/Desktop/CodeDay/Code Day/Assets/2DLightAsset/Scripts/Helpers/pseudoSinCos.dll</HintPath>
- </Reference>
->>>>>>> parent of 5f20815... Acceleration
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

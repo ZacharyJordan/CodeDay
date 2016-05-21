@@ -84,6 +84,7 @@
 'Assets/2DLightAsset/Scripts/Helpers/interface_touch.cs'
 'Assets/2DLightAsset/Scripts/Helpers/interface_touch2.cs'
 'Assets/2DLightAsset/Scripts/rotate.cs'
+'Assets/ModifyColor.cs'
 'Assets/PlayerControllers.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

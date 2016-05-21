@@ -15,11 +15,17 @@ public class PlayerControllers : MonoBehaviour {
 	private Vector2 playerThreePos;
 	private Vector2 playerFourPos;
 
+	private float playerOneXSpeed;
+	private float playerOneYSpeed;
+
 	// Use this for initialization
 	void Start () 
 	{
 		playerOnePos = playerOne.GetComponent<Transform>().position;
 		playerTwoPos = playerTwo.GetComponent<Transform>().position;
+
+		playerOneXSpeed = 0;
+		playerOneYSpeed = 0;
 	}
 	
 	// Update is called once per frame
@@ -30,6 +36,15 @@ public class PlayerControllers : MonoBehaviour {
 
 	void movementControl()
 	{
+		/*
+		 * Vector3 pos = cLight.transform.position;
+		pos.x += Input.GetAxis ("Horizontal") * 30f * Time.deltaTime;
+		pos.y += Input.GetAxis ("Vertical") * 30f * Time.deltaTime;
+		cLight.transform.position = pos;
+		*/
+
+
+
 		if(Input.GetKey(KeyCode.A))
 		{
 			playerOnePos.x -= movementSpeed;
@@ -65,7 +80,7 @@ public class PlayerControllers : MonoBehaviour {
 		{
 			playerTwoPos.y -= movementSpeed;
 		}
-
+			
 		playerOne.GetComponent<Transform>().position = playerOnePos;
 		playerTwo.GetComponent<Transform>().position = playerTwoPos;
 
