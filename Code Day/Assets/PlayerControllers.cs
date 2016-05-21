@@ -18,7 +18,8 @@ public class PlayerControllers : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		playerOnePos = GetComponent<Transform>().position;
+		playerOnePos = playerOne.GetComponent<Transform>().position;
+		playerTwoPos = playerTwo.GetComponent<Transform>().position;
 	}
 	
 	// Update is called once per frame
@@ -45,6 +46,24 @@ public class PlayerControllers : MonoBehaviour {
 		else if(Input.GetKey(KeyCode.S))
 		{
 			playerOnePos.y -= movementSpeed;
+		}
+
+		if(Input.GetKey(KeyCode.LeftArrow))
+		{
+			playerTwoPos.x -= movementSpeed;
+		}
+		else if(Input.GetKey(KeyCode.RightArrow))
+		{
+			playerTwoPos.x += movementSpeed;
+		}
+
+		if(Input.GetKey(KeyCode.UpArrow))
+		{
+			playerTwoPos.y += movementSpeed;
+		}
+		else if(Input.GetKey(KeyCode.DownArrow))
+		{
+			playerTwoPos.y -= movementSpeed;
 		}
 
 		playerOne.GetComponent<Transform>().position = playerOnePos;
