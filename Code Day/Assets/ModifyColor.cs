@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ModifyColor : MonoBehaviour {
-    
+    //Test
     
     public Color color1 = Color.red;
     public Color color2 = Color.blue;
