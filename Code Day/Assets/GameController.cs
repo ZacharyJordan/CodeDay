@@ -5,6 +5,7 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	// Use this for initialization
+	public GameObject FirstEnemy;
 	private GameObject countDown;
 
 	private Text countDownText;
@@ -21,7 +22,7 @@ public class GameController : MonoBehaviour {
 		Invoke("easeIn", 1F);
 		InvokeRepeating("countTime", 5F, 1F);
 
-		Invoke("enemyOneAppear", 7F);
+		Invoke("enemyOneAppear", 6F);
 
 		countingInt = 3;
 
@@ -35,8 +36,15 @@ public class GameController : MonoBehaviour {
 
 	void enemyOneAppear()
 	{
-		LeanTween.scale(GameObject.Find("FirstEnemy"), new Vector3(1F, 1F, 1F), .7F).setEase(LeanTweenType.easeInOutCirc);
+		FirstEnemy.SetActive(true);
+		LeanTween.scale(FirstEnemy, new Vector3(2F, 2F, 2F), .5F).setEase(LeanTweenType.easeInOutCirc);
+		Invoke("StartFirst", .6F);
 
+	}
+
+	void StartFirst()
+	{
+		FirstEnemy.GetComponent<easyEnemy>().startMovement();
 	}
 
 void easeIn()
@@ -63,11 +71,17 @@ void easeIn()
 		else 
 		{
 			countDownText.text = "Go!";
+			Invoke("StartMovement", 1.1F);
 		}
 		if(countingInt != -1)
 		{
 			Invoke("easeIn", 0F);
 		}
+	}
+
+	void StartMovement()
+	{
+		GameObject.Find("PlayerOne").GetComponent<PlayerMovement>().startMoving();
 	}
 
 // Update is called once per frame
