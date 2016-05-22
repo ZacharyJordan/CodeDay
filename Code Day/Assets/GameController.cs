@@ -1,38 +1,78 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject countDown;
+	private GameObject countDown;
 
-	private Texture countDownText;
+	private Text countDownText;
+	private int countingInt;
+
 	private int secondsCount;
 
 	void Start () 
 	{
 		secondsCount = 0;
+		countDown = GameObject.Find("CountDown");
 		countDownText = countDown.GetComponent<Text>();
 
-}
-	
-	Invoke("CountDown", 1F);
-	InvokeRepeating("countTime", 5F, 1F);
+		Invoke("easeIn", 1F);
+		InvokeRepeating("countTime", 5F, 1F);
+
+		Invoke("enemyOneAppear", 7F);
+
+		countingInt = 3;
+
 }
 
-void countTime()
+	void countTime()
 {
 	secondsCount += 1;
 	Debug.Log(secondsCount);
 }
 
-void CountDown()
+	void enemyOneAppear()
+	{
+		Debug.Log("wow!");
+
+	}
+
+void easeIn()
 {
-	LeanTween.scale(countDown, new Vector3(0F, 0F, 0F)).setEase(LeanTweenType.EaseInOut);
+		LeanTween.scale(countDown, new Vector3(1F, 1F, 1F), .7F).setEase(LeanTweenType.easeInOutCirc);
+		Invoke("easeOut", .7F);
+
 }
+
+	void easeOut()
+	{
+		LeanTween.scale(countDown, new Vector3(0F, 0F, 0F), .7F).setEase(LeanTweenType.easeInOutCirc);
+		countingInt--;
+		Invoke("changeText", .7F);
+	}
+
+	void changeText()
+	{
+		if(countingInt != 0)
+		{
+			countDownText.text = countingInt.ToString();
+
+		}
+		else 
+		{
+			countDownText.text = "Go!";
+		}
+		if(countingInt != -1)
+		{
+			Invoke("easeIn", 0F);
+		}
+	}
 
 // Update is called once per frame
 void Update () 
 {
 
+}
 }

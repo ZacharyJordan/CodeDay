@@ -5,10 +5,10 @@
       <File FileName="Assets/PlayerMovement.cs" Line="46" Column="73" />
       <File FileName="Assets/easyEnemy.cs" Line="67" Column="29" />
       <File FileName="Assets/ModifyColorPlayer.cs" Line="39" Column="5" />
-      <File FileName="Assets/PlayerControllers.cs" Line="83" Column="4" />
+      <File FileName="Assets/PlayerControllers.cs" Line="82" Column="4" />
       <File FileName="Assets/2DLightAsset/Scripts/Helpers/interface_touch.cs" Line="22" Column="36" />
       <File FileName="Assets/ModifyColor.cs" Line="10" Column="5" />
-      <File FileName="Assets/GameController.cs" Line="24" Column="3" />
+      <File FileName="Assets/GameController.cs" Line="29" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
