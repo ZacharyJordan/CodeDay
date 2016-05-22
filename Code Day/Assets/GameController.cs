@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour {
 	public GameObject FirstEnemy;
 	private GameObject countDown;
 
+	private GameObject firstSpikes;
+	private Vector2 firstSpikesPos; 
+
 	private Text countDownText;
 	private int countingInt;
 
@@ -15,6 +18,9 @@ public class GameController : MonoBehaviour {
 
 	void Start () 
 	{
+		firstSpikes = GameObject.Find("Spikes4");
+		firstSpikesPos = firstSpikes.GetComponent<Transform>().position;
+
 		secondsCount = 0;
 		countDown = GameObject.Find("CountDown");
 		countDownText = countDown.GetComponent<Text>();
@@ -31,8 +37,19 @@ public class GameController : MonoBehaviour {
 	void countTime()
 {
 	secondsCount += 1;
-	Debug.Log(secondsCount);
+	
+		if(secondsCount > 10)
+		{
+			Debug.Log("Wow!");
+			firstSpikesSpawn();
+		}
+	
 }
+
+	void firstSpikesSpawn()
+	{
+		LeanTween.move(firstSpikes, firstSpikesPos, .3F).setEase(LeanTweenType.easeInOutCirc);
+	}
 
 	void enemyOneAppear()
 	{
