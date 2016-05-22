@@ -50,8 +50,12 @@
      <Compile Include="Assets\2DLightAsset\Scripts\Helpers\interface_touch.cs" />
      <Compile Include="Assets\2DLightAsset\Scripts\Helpers\interface_touch2.cs" />
      <Compile Include="Assets\2DLightAsset\Scripts\rotate.cs" />
+     <Compile Include="Assets\GameController.cs" />
      <Compile Include="Assets\ModifyColor.cs" />
+     <Compile Include="Assets\ModifyColorPlayer.cs" />
      <Compile Include="Assets\PlayerControllers.cs" />
+     <Compile Include="Assets\PlayerMovement.cs" />
+     <Compile Include="Assets\easyEnemy.cs" />
      <None Include="Assets\2DLightAsset\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
      <None Include="Assets\LeanTween\ReadMe.txt" />
      <None Include="Assets\2DLightAsset\Shaders\Gradient-ZFighting.shader" />
