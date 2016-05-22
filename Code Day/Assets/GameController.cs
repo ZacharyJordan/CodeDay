@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
 
 	void enemyOneAppear()
 	{
-		Debug.Log("wow!");
+		LeanTween.scale(GameObject.Find("FirstEnemy"), new Vector3(1F, 1F, 1F), .7F).setEase(LeanTweenType.easeInOutCirc);
 
 	}
 
